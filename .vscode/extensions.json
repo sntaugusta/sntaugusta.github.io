@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "dsznajder.es7-react-js-snippets",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "jonkwheeler.styled-components-snippets",
+    "ms-vscode.vscode-typescript-next",
+    "styled-components.vscode-styled-components",
+    "tonybaloney.vscode-pets",
+    "xabikos.JavaScriptSnippets"
+  ]
+}
