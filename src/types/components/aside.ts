@@ -1,4 +1,4 @@
-import { ScreensProps } from '@/types/context/upload';
+import { ScreensProps } from '@/types/context/split';
 import { ChangeEvent } from 'react';
 
 export interface IHandleChangeSize {
