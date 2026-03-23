@@ -4,7 +4,7 @@ import { Input } from '@/components/input';
 export const KidsAside = () => {
   return (
     <Aside>
-      <Input label="Foto" type="file" />
+      <Input label="Foto" type="crop" />
       <Input label="Nome completo da criança" />
       <Input label="Data de nascimento" />
       <Input label="Equipe" />

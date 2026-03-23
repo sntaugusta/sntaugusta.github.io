@@ -1,5 +1,6 @@
 import { IInput } from '@/types/components/input';
 import { FC, useId } from 'react';
+import { CropInput } from './crop';
 import { FileInput } from './file';
 import { InputText } from './text';
 
@@ -65,6 +66,9 @@ export const Input: FC<IInput> = (props) => {
   }
   if (type === 'week') {
     return <input type={type} />;
+  }
+  if (type === 'crop') {
+    return <CropInput {...propsToElement} />;
   }
   return <InputText {...propsToElement} />;
 };

@@ -23,32 +23,10 @@ export const SplitAside = () => {
       img.addEventListener('load', () => {
         const screensList = Object.entries(stateScreens) as [ScreensKeys, ScreensProps[ScreensKeys]][];
         const { center, aside } = stateScreens;
-        screensList.forEach(([key, current]) => {
+        screensList.forEach(([key]) => {
           const canvas = document.createElement('canvas');
           const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
-          // const others = screensList.find(([otherKey]) => otherKey !== key);
-          // if (others) {
-          //   const [, othersItem] = others;
-          //   const { width: otherWidth, height: otherHeight } = othersItem;
-          //   canvas.width = current.width;
-          //   canvas.height = current.height;
-          //   const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
-          //   setStateImages((prevState) => {
-          //     const { height, width } = current;
-          //     const sy = (otherHeight - height) / 2;
-          //     const halfWidth = width / 2;
-          //     const rightWidth = otherWidth + halfWidth;
-          //     if (key === 'center') {
-          //       ctx.drawImage(img, otherWidth / 2, 0, width, height, 0, 0, width, height);
-          //     } else {
-          //       ctx.drawImage(img, 0, sy, width, otherHeight, 0, 0, width, otherHeight);
-          //       ctx.drawImage(img, rightWidth, sy, halfWidth, otherHeight, halfWidth, 0, halfWidth, otherHeight);
-          //     }
-          //     const src = canvas.toDataURL('image/png');
-          //     return { ...prevState, [key as ScreensKeys]: src };
-          //   });
-          // }
-          // const others = screensList.find(([otherKey]) => otherKey !== key);
+
           if (key === 'center') {
             const { width, height } = center;
             const { width: asideWidth } = aside;
@@ -62,7 +40,6 @@ export const SplitAside = () => {
             const dy = 0;
             const dw = width;
             const dh = height;
-
             ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh);
           }
           if (key === 'aside') {
@@ -93,32 +70,6 @@ export const SplitAside = () => {
           const src = canvas.toDataURL('image/png');
           setStateImages((prevState) => ({ ...prevState, [key as ScreensKeys]: src }));
         });
-        // const screensList = Object.entries(stateScreens);
-        // screensList.forEach(([key, value]) => {
-        //   const canvas = document.createElement('canvas');
-        //   const others = screensList.find(([otherKey]) => otherKey !== key);
-        //   if (others) {
-        //     const [, othersItem] = others;
-        //     const { width: otherWidth, height: otherHeight } = othersItem;
-        //     canvas.width = value.width;
-        //     canvas.height = value.height;
-        //     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
-        //     setStateImages((prevState) => {
-        //       const { height, width } = value;
-        //       const sy = (otherHeight - height) / 2;
-        //       const halfWidth = width / 2;
-        //       const rightWidth = otherWidth + halfWidth;
-        //       if (key === 'center') {
-        //         ctx.drawImage(img, otherWidth / 2, 0, width, height, 0, 0, width, height);
-        //       } else {
-        //         ctx.drawImage(img, 0, sy, width, otherHeight, 0, 0, width, otherHeight);
-        //         ctx.drawImage(img, rightWidth, sy, halfWidth, otherHeight, halfWidth, 0, halfWidth, otherHeight);
-        //       }
-        //       const src = canvas.toDataURL('image/png');
-        //       return { ...prevState, [key as ScreensKeys]: src };
-        //     });
-        //   }
-        // });
       });
       const blob = URL.createObjectURL(file);
       img.src = blob;
