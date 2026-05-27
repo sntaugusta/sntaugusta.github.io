@@ -5,7 +5,7 @@ import { createContext, FC, PropsWithChildren, useContext, useState } from 'reac
 
 const screensInit: ScreensProps = {
   center: { label: 'Central', width: 1920, height: 1080, lock: true },
-  aside: { label: 'Lateral', width: 1768, height: 768, lock: true },
+  aside: { label: 'Lateral', width: 1366, height: 768, lock: true },
 };
 
 const imagesInit: ScreensImageProps = {
