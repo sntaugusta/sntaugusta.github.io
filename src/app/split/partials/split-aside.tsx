@@ -9,6 +9,7 @@ import * as S from './split-aside.style';
 export const SplitAside: FC<{ onChange: (e: ChangeEvent<HTMLInputElement>) => void }> = (props) => {
   const { onChange } = props;
   const handleChangeFile = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e);
     onChange(e);
   };
 

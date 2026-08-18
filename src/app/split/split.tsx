@@ -13,9 +13,9 @@ const PageSplit = () => {
 
   useEffect(() => {
     const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-      const { currentTarget } = e;
-      if (currentTarget && currentTarget.files) {
-        const [file] = currentTarget.files;
+      const { target } = e;
+      if (target && target.files) {
+        const [file] = target.files;
         const blob = URL.createObjectURL(file);
         setStateBlobURL(blob);
       }
