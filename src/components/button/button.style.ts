@@ -61,13 +61,15 @@ export const WrapperButton = styled.button<IButton>`
   padding: ${({ ratio }) => padding(ratio)};
   border-radius: 4px;
   cursor: pointer;
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled, [aria-disabled='true']) {
     background-color: #fff;
     color: #006;
     fill: #006;
   }
-  &:disabled {
+  &:disabled,
+  &[aria-disabled='true'] {
     cursor: not-allowed;
+    opacity: 0.6;
   }
   ${IconButton} {
     width: ${({ ratio }) => fontSize(ratio)};

@@ -1,5 +1,5 @@
 import { Aside } from '@/components/aside';
-import { useStreamMessageContext } from '@/context/pages/content';
+import { useStreamMessageContext } from '@/context/stream-message.context';
 import { InputEvent } from 'react';
 import * as S from './stream-message-aside.style';
 

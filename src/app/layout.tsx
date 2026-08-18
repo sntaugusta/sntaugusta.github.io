@@ -2,8 +2,8 @@
 
 import { Container } from '@/components/container';
 import { GlobalsStyle } from '@/components/global-css';
+import { SplitScreenContextProvider } from '@/components/screen-slice/partials/screen-slice.context';
 import { AsideContextProvider } from '@/context/aside.context';
-import { PageContextProvider } from '@/context/pages';
 import { ToastrContextProvider } from '@/context/toastr.context';
 import { FC, PropsWithChildren } from 'react';
 
@@ -15,13 +15,13 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
         <GlobalsStyle />
       </head>
       <body>
-        <AsideContextProvider>
-          <ToastrContextProvider>
-            <PageContextProvider>
+        <SplitScreenContextProvider>
+          <AsideContextProvider>
+            <ToastrContextProvider>
               <Container>{children}</Container>
-            </PageContextProvider>
-          </ToastrContextProvider>
-        </AsideContextProvider>
+            </ToastrContextProvider>
+          </AsideContextProvider>
+        </SplitScreenContextProvider>
       </body>
     </html>
   );

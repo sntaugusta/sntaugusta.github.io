@@ -4,16 +4,22 @@ export const WrapperInput = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-bottom: 24px;
+  padding-bottom: 16px;
 `;
 
 export const LabelInput = styled.label`
   order: -1;
   font-size: 16px;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
 `;
 
-export const ElementInput = styled.input`
+export const WrapperFieldInput = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`;
+
+export const FieldInput = styled.input`
   padding: 8px;
   width: 100%;
   border-radius: 4px;

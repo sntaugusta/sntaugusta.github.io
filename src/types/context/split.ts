@@ -7,6 +7,7 @@ export type ScreensKeys = 'center' | 'aside';
 export type ScreensProps = {
   [key in ScreensKeys]: { label: ScreensLabel; width: number; height: number; lock: boolean };
 };
+
 export type ScreensImageProps = {
   [key in ScreensKeys]: string;
 };

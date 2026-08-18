@@ -18,7 +18,7 @@ export const Filename = styled.span`
   min-height: 1.25em;
 `;
 
-export const File = styled.label<{ hasImage: boolean }>`
+export const File = styled.label<{ hasImage: boolean; shape: string }>`
   margin: 8px 0 24px;
   width: 100%;
   border-radius: 12px;
@@ -44,15 +44,18 @@ export const File = styled.label<{ hasImage: boolean }>`
     width: 100%;
     height: 100%;
     background-color: #fff3;
-    border-radius: 12px;
+    border-radius: ${({ shape }) => (shape === 'circle' ? '50%' : '12px')};
     z-index: 3;
   }
   input {
-    width: 0;
-    height: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
     position: absolute;
     cursor: pointer;
+    left: 0;
+    top: 0;
+    z-index: 4;
   }
   svg {
     width: 64px;

@@ -150,7 +150,8 @@ export const GlobalsStyle = () => (
         -moz-appearance: none;
         appearance: none;
       }
-      [disabled] {
+      [disabled],
+      [aria-disabled='true'] {
         cursor: not-allowed;
       }
 
@@ -158,9 +159,9 @@ export const GlobalsStyle = () => (
         min-height: 100vh;
       }
       ::selection {
-        background: #f99;
-        color: #fff;
-        text-shadow: 2px 2px 3px #f55;
+        background: #d9ff00;
+        color: #000;
+        text-shadow: 2px 2px 3px #9cb60b;
       }
 
       @media (prefers-color-scheme: dark) {

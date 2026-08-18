@@ -2,7 +2,8 @@ import { IInput } from '@/types/components/input';
 import { FC, useId } from 'react';
 import { CropInput } from './crop';
 import { FileInput } from './file';
-import { InputText } from './text';
+import { RangeInput } from './range';
+import { TextInput } from './text';
 
 export const Input: FC<IInput> = (props) => {
   const { type, id } = props;
@@ -35,7 +36,7 @@ export const Input: FC<IInput> = (props) => {
     return <input type={type} />;
   }
   if (type === 'number') {
-    return <input type={type} />;
+    return <TextInput {...propsToElement} />;
   }
   if (type === 'password') {
     return <input type={type} />;
@@ -44,7 +45,7 @@ export const Input: FC<IInput> = (props) => {
     return <input type={type} />;
   }
   if (type === 'range') {
-    return <input type={type} />;
+    return <RangeInput {...propsToElement} />;
   }
   if (type === 'search') {
     return <input type={type} />;
@@ -53,9 +54,6 @@ export const Input: FC<IInput> = (props) => {
     return <input type={type} />;
   }
   if (type === 'tel') {
-    return <input type={type} />;
-  }
-  if (type === 'text') {
     return <input type={type} />;
   }
   if (type === 'time') {
@@ -70,5 +68,5 @@ export const Input: FC<IInput> = (props) => {
   if (type === 'crop') {
     return <CropInput {...propsToElement} />;
   }
-  return <InputText {...propsToElement} />;
+  return <TextInput {...propsToElement} />;
 };

@@ -3,7 +3,7 @@
 import { Button } from '@/components/button';
 import { IconContentCopy } from '@/components/icons';
 import { useAsideContext } from '@/context/aside.context';
-import { useStreamMessageContext } from '@/context/pages/content';
+import { useStreamMessageContext } from '@/context/stream-message.context';
 import { useToastrContext } from '@/context/toastr.context';
 import { useEffect } from 'react';
 import { StreamMessageAside } from './partials/stream-message-aside';
