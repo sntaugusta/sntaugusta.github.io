@@ -9,14 +9,13 @@ import * as S from './split-aside.style';
 export const SplitAside: FC<{ onChange: (e: ChangeEvent<HTMLInputElement>) => void }> = (props) => {
   const { onChange } = props;
   const handleChangeFile = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e);
     onChange(e);
   };
 
   return (
     <Aside>
       <S.Tools>
-        <Button as="a" href="/sample-psd.psd">
+        <Button as="a" href="/downloads/sample-psd.psd">
           PSD de Exemplo
         </Button>
       </S.Tools>

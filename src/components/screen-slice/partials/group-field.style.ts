@@ -1,3 +1,4 @@
+import { Button } from '@/components/button';
 import { Input } from '@/components/input';
 import styled from '@emotion/styled';
 
@@ -19,4 +20,8 @@ export const ScreenToolsContent = styled.div`
 
 export const ScreenToolsField = styled(Input)`
   width: 80px;
+`;
+
+export const ScreenToolsButton = styled(Button)`
+  justify-content: center;
 `;

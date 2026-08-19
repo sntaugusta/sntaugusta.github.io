@@ -8,7 +8,7 @@ export type ScreenSliceInit = {
   [key in ScreenSliceKeys]: { label: ScreenSliceLabel; width: number; height: number; lock: boolean; url: string };
 };
 
-export type ScreenSliceProps = { url: string };
+export type ScreenSliceProps = { url: string; name?: string };
 
 export interface IScreenButton {
   href: string;
@@ -23,6 +23,7 @@ export interface IScreenField {
 
 export interface IScreenGroupField {
   screenKey: ScreenSliceKeys;
+  name?: string;
 }
 
 export interface IScreenFieldEvent {

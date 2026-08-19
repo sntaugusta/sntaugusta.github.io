@@ -7,6 +7,7 @@ export interface IInputChanged {
   y: number;
   width: number;
   height: number;
+  name: string;
 }
 
 export interface IInput extends InputHTMLAttributes<HTMLInputElement> {

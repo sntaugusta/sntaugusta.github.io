@@ -7,22 +7,22 @@ import { useEffect, useState } from 'react';
 import { KidsAside } from './partials/kids-aside';
 
 const PageSplit = () => {
-  const [stateBlobURL, setStateBlobURL] = useState('');
+  const [stateBlobURL, setStateBlobURL] = useState({ url: '', name: '' });
   const {
     set: { setStateAside },
   } = useAsideContext();
 
   useEffect(() => {
     const handleChangedInput = (e: IInputChanged) => {
-      const { url } = e;
+      const { url, name } = e;
       if (url) {
-        setStateBlobURL(url);
+        setStateBlobURL({ url, name });
       }
     };
     setStateAside(<KidsAside onChanged={handleChangedInput} />);
   }, [setStateAside]);
 
-  return <ScreenSlice url={stateBlobURL} />;
+  return <ScreenSlice url={stateBlobURL.url} name={stateBlobURL.name} />;
 };
 
 export default PageSplit;

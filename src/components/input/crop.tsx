@@ -8,7 +8,15 @@ import { RangeInput } from './range';
 
 export const CropInput: FC<IInput> = (props) => {
   const { onChanged } = props;
-  const [stateImage, setStateImage] = useState<IInputChanged>({ url: '', zoom: 1, x: 0, y: 0, width: 0, height: 0 });
+  const [stateImage, setStateImage] = useState<IInputChanged>({
+    url: '',
+    zoom: 1,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+    name: '',
+  });
   const previewRef = useRef<HTMLDivElement>(null);
   const [stateCroppedAreaPixels, setStateCroppedAreaPixels] = useState<Area>();
   const [statePreviewURL, setStatePreviewURL] = useState('');
@@ -83,6 +91,7 @@ export const CropInput: FC<IInput> = (props) => {
           x: 0,
           y: 0,
           zoom: 1,
+          name: stateImage.name,
         });
       }, 'image/jpeg');
     });
@@ -94,7 +103,7 @@ export const CropInput: FC<IInput> = (props) => {
       if (propsCrop) {
         onChanged(propsCrop);
         setStatePreviewURL(propsCrop.url);
-        setStateImage({ url: '', width: 0, height: 0, x: 0, y: 0, zoom: 1 });
+        setStateImage({ url: '', width: 0, height: 0, x: 0, y: 0, zoom: 1, name: '' });
       }
     }
   };

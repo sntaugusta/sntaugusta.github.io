@@ -27,7 +27,6 @@ export const FileInput: FC<IInput> = (props) => {
         new Promise((resolve) => {
           const img = new Image();
           img.addEventListener('load', () => {
-            // Use naturalWidth to get the underlying image file dimensions
             if (onChange) {
               onChange(e);
             }
@@ -39,6 +38,7 @@ export const FileInput: FC<IInput> = (props) => {
                 x: img.width / 3,
                 y: img.height / 3,
                 zoom: 1,
+                name: file.name,
               });
             }
             resolve(null);

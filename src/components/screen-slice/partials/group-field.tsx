@@ -1,17 +1,16 @@
-import { Button } from '@/components/button';
 import { IScreenFieldEvent, IScreenGroupField } from '@/types/components/screen-slice';
 import { FC } from 'react';
 import * as S from './group-field.style';
 import { useSplitScreenContext } from './screen-slice.context';
 
 export const ScreenGroupField: FC<IScreenGroupField> = (props) => {
-  const { screenKey } = props;
+  const { screenKey, name } = props;
   const {
     set: { setStateScreens },
     get: { stateScreens },
   } = useSplitScreenContext();
   const { label, height, width, url } = stateScreens[screenKey];
-  const date = new Date().toLocaleDateString('sv');
+  const filename = name?.replace(/\.\w+$/, '') ?? 'Split';
 
   const handleChangeSize = ({ event, attr }: IScreenFieldEvent) => {
     const {
@@ -55,9 +54,9 @@ export const ScreenGroupField: FC<IScreenGroupField> = (props) => {
           onInput={(e) => handleChangeSize({ event: e, attr: 'height' })}
         />
       </S.ScreenToolsContent>
-      <Button as="a" href={url} download={url ? `Split-${label}-${date}.png` : ''} aria-disabled={!url}>
+      <S.ScreenToolsButton as="a" href={url} download={url ? `${filename}-${label}.png` : ''} aria-disabled={!url}>
         Download {label}
-      </Button>
+      </S.ScreenToolsButton>
     </S.ScreenToolsItem>
   );
 };
